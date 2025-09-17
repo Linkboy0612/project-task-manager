@@ -1,0 +1,179 @@
+.recent-tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.task-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.task-item:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-1px);
+}
+
+.task-priority-indicator {
+  width: 4px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0.75rem 0 0 0.75rem;
+}
+
+.task-content {
+  flex: 1;
+  margin-left: 0.5rem;
+}
+
+.task-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  gap: 1rem;
+}
+
+.task-title {
+  font-size: 0.975rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin: 0;
+}
+
+.task-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.priority-badge,
+.status-badge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  white-space: nowrap;
+}
+
+.task-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task-project {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.project-label {
+  color: var(--text-muted);
+}
+
+.project-name {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.task-details {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.task-assignee,
+.task-due-date {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.task-assignee svg,
+.task-due-date svg {
+  color: var(--text-muted);
+}
+
+.task-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task-action-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+.task-action-btn:hover {
+  color: var(--text-primary);
+  background: var(--primary-bg);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .task-item {
+    padding: 0.875rem;
+    gap: 0.75rem;
+  }
+  
+  .task-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  
+  .task-badges {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .task-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .task-actions {
+    position: absolute;
+    top: 0.875rem;
+    right: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .task-item {
+    padding: 0.75rem;
+    margin-left: 0;
+  }
+  
+  .task-content {
+    margin-left: 0.25rem;
+  }
+  
+  .priority-badge,
+  .status-badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+  }
+}
